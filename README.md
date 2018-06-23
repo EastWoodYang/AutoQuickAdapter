@@ -2,7 +2,7 @@
 
 ## Look Like
 
-<img src='https://github.com/EastWoodYang/MicroModule/blob/master/picture/1.gif'/><img src='https://github.com/EastWoodYang/MicroModule/blob/master/picture/2.gif'/>
+<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.gif'/><img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.gif'/>
 
 ## Get it
 AutoQuickAdapter is now available on JCentral.
