@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AutoAdapter">
+        <item name="auto_adapter_loading_layout">@layout/default_loading_layout</item>
+        <item name="auto_adapter_end_layout">@layout/default_end_layout</item>
+        <item name="auto_adapter_manual_layout">@layout/default_manual_layout</item>
+        <item name="auto_adapter_error_layout">@layout/default_error_layout</item>
+    </style>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Accessible global theme attributes -->
+    <attr name="auto_adapter_loading_layout" format="reference" />
+    <attr name="auto_adapter_manual_layout" format="reference" />
+    <attr name="auto_adapter_end_layout" format="reference" />
+    <attr name="auto_adapter_error_layout" format="reference" />
+
+</resources>

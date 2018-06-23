@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--<item name="auto_adapter_manual_layout">@layout/custom_manual_layout</item>-->
+    </style>
+
+    <style name="CustomTheme" parent="AppTheme">
+        <item name="auto_adapter_loading_layout">@layout/custom_loading_layout</item>
+        <item name="auto_adapter_manual_layout">@layout/custom_manual_layout</item>
+        <item name="auto_adapter_end_layout">@layout/custom_end_layout</item>
+        <item name="auto_adapter_error_layout">@layout/custom_error_layout</item>
+    </style>
+
+    custom_auto_load_layout
+
+
+    <style name="ProgressBarAutoLoading" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDrawable">@drawable/rotate_progress_bar_auto_loading</item>
+        <item name="android:indeterminateDuration">1000</item>
+    </style>
+
+</resources>

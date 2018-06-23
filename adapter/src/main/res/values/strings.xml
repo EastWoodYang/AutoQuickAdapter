@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">adapter</string>
+    <string name="load_failure">FAILURE, CLICK TO RETRY</string>
+    <string name="load_end">NO MORE DATA</string>
+    <string name="load_more">CLICK TO LOAD MORE</string>
+</resources>

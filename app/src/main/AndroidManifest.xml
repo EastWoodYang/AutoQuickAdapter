@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eastwood.common.adapter.demo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ListSamples">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- REFRESH LIST VIEW -->
+
+        <activity
+            android:name=".SampleListViewQuickAdapter"
+            android:label="ListView/QuickAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleListViewAutoWrapAdapter"
+            android:label="ListView/AutoWrapAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleListViewAutoQuickAdapter"
+            android:label="ListView/AutoQuickAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleListViewAutoQuickAdapterManualLoad"
+            android:label="ListView/AutoQuickAdapter with Manual Load">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleListViewAutoQuickAdapterCustomLayout"
+            android:label="ListView/AutoQuickAdapter with Custom Loading Layout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleListViewAutoQuickAdapterCustomTheme"
+            android:label="ListView/AutoQuickAdapter with Custom Theme"
+            android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithQuickRecyclerSingleAdapter"
+            android:label="RecyclerView/QuickRecyclerAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithQuickRecyclerAdapter"
+            android:label="RecyclerView/QuickMultiRecyclerAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoQuickRecyclerAdapter"
+            android:label="RecyclerView/AutoQuickRecyclerMultiAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoWrapRecyclerAdapter"
+            android:label="RecyclerView/AutoWrapRecyclerAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoQuickRecyclerSingleAdapter"
+            android:label="RecyclerView/AutoQuickRecyclerAdapter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoQuickRecyclerAdapterManualLoad"
+            android:label="RecyclerView/AutoQuickRecyclerAdapter with Manual Load">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoQuickRecyclerAdapterCustomLayout"
+            android:label="RecyclerView/AutoQuickRecyclerAdapter with Custom Loading Layout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SampleRecyclerViewWithAutoQuickRecyclerAdapterCustomTheme"
+            android:label="RecyclerView/AutoQuickRecyclerAdapter with Custom Theme"
+            android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.eastwood.common.adapter.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
