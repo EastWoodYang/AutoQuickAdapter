@@ -55,10 +55,7 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
 
     @Override
     public int getCount() {
-        int extra = autoLoadUsable || loadEnd ? 1 : 0;
-        if(manualLoad) {
-            extra = 1;
-        }
+        int extra = autoLoadUsable || loadEnd || manualLoad ? 1 : 0;
         return getBodyCount() + extra;
     }
 

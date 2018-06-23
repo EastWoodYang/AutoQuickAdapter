@@ -40,6 +40,7 @@ public class SampleListViewAutoQuickAdapterCustomTheme extends AppCompatActivity
         listView = findViewById(R.id.refresh_layout);
         listView.setAdapter(mAutoQuickAdapter);
         mAutoQuickAdapter.setAutoLoadUsable(true);
+        mAutoQuickAdapter.setManualLoad(true);
         mAutoQuickAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {

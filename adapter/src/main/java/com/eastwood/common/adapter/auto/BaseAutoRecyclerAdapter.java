@@ -102,7 +102,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     @Override
     public int getItemCount() {
         super.getItemCount();
-        int extra = autoLoadUsable || loadEnd ? 1 : 0;
+        int extra = autoLoadUsable || loadEnd || manualLoad ? 1 : 0;
         return getBodyCount() + extra;
     }
 
