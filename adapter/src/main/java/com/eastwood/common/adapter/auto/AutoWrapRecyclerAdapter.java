@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.eastwood.common.adapter.RecyclerAdapterHelper;
+import com.eastwood.common.adapter.ViewHelper;
 
 public class AutoWrapRecyclerAdapter<T extends RecyclerView.Adapter> extends BaseAutoRecyclerAdapter {
 
@@ -45,7 +46,7 @@ public class AutoWrapRecyclerAdapter<T extends RecyclerView.Adapter> extends Bas
     }
 
     @Override
-    protected void convert(int position, RecyclerAdapterHelper helper, Object item) {
+    protected void convert(int position, ViewHelper helper, Object item) {
 
     }
 

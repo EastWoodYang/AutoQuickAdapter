@@ -36,20 +36,6 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-/**
- * Allows an abstraction of the ViewHolder pattern.<br>
- * <br>
- * <p/>
- * <b>Usage</b>
- * <p/>
- * <pre>
- * return BaseAdapterHelper.get(context, convertView, parent, R.layout.item)
- *         .setText(R.id.tvName, contact.getName())
- *         .setText(R.id.tvEmails, contact.getEmails().toString())
- *         .setText(R.id.tvNumbers, contact.getNumbers().toString())
- *         .getView();
- * </pre>
- */
 public class BaseAdapterHelper implements ViewHelper<BaseAdapterHelper> {
 
     /** Views indexed with their IDs */
@@ -68,18 +54,10 @@ public class BaseAdapterHelper implements ViewHelper<BaseAdapterHelper> {
         convertView.setTag(this);
     }
 
-    /**
-     * This method is the only entry point to get a BaseAdapterHelper.
-     * @param context     The current context.
-     * @param convertView The convertView arg passed to the getView() method.
-     * @param parent      The parent arg passed to the getView() method.
-     * @return A BaseAdapterHelper instance.
-     */
     public static BaseAdapterHelper get(Context context, View convertView, ViewGroup parent, int layoutId) {
         return get(context, convertView, parent, layoutId, -1);
     }
 
-    /** This method is package private and should only be used by QuickAdapter. */
     public static BaseAdapterHelper get(Context context, View convertView, ViewGroup parent, int layoutId, int position) {
         if (convertView == null) {
             return new BaseAdapterHelper(context, parent, layoutId);
@@ -184,30 +162,6 @@ public class BaseAdapterHelper implements ViewHelper<BaseAdapterHelper> {
         view.setImageDrawable(drawable);
         return this;
     }
-
-//    public BaseAdapterHelper setImageUrl(int viewId, String imageUrl, ImageLoader imageLoader) {
-//        ImageView view = retrieveView(viewId);
-//        imageLoader.displayImage(imageUrl, view);
-//
-////        if (!TextUtils.isEmpty(imageUrl) && view.getTag() == null
-////                || !view.getTag().equals(imageUrl)) {
-////            imageLoader.displayImage(imageUrl, view);
-////            view.setTag(imageUrl);
-////        }
-//        return this;
-//    }
-//
-//    public BaseAdapterHelper setImageUrl(int viewId, String imageUrl, ImageLoader imageLoader, DisplayImageOptions options) {
-//        ImageView view = retrieveView(viewId);
-//        imageLoader.displayImage(imageUrl, view, options);
-//
-////        if (!TextUtils.isEmpty(imageUrl) && view.getTag() == null
-////                || !view.getTag().equals(imageUrl)) {
-////            imageLoader.displayImage(imageUrl, view, options);
-////            view.setTag(imageUrl);
-////        }
-//        return this;
-//    }
 
     @Override
     public BaseAdapterHelper setImageBitmap(int viewId, Bitmap bitmap) {

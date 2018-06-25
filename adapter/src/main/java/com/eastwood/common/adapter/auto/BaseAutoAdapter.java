@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.eastwood.common.adapter.BaseAdapterHelper;
 import com.eastwood.common.adapter.BaseQuickAdapter;
 import com.eastwood.common.adapter.R;
+import com.eastwood.common.adapter.ViewHelper;
 
 import java.util.List;
 
@@ -68,7 +69,7 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (getItemViewType(position) == 0) {
-            final BaseAdapterHelper helper = getAdapterHelper(position, convertView, parent);
+            final ViewHelper helper = getAdapterHelper(position, convertView, parent);
             T item = getItem(position);
             convert(position, helper, item);
             return helper.getView();
@@ -119,7 +120,7 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
         notifyDataSetChanged();
     }
 
-    public boolean getAutoLoadUsable() {
+    public boolean isAutoLoadUsable() {
         return autoLoadUsable;
     }
 
@@ -132,6 +133,10 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
     }
 
     public boolean isLoadError() {
+        return loadError;
+    }
+
+    public boolean setLoadError(boolean loadError) {
         return loadError;
     }
 
@@ -220,7 +225,7 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
         notifyDataSetChanged();
     }
 
-    public void onAutoLoadComplete(boolean autoLoadUsable) {
+    public void onAutoLoadFinished(boolean autoLoadUsable) {
         setLoading(false);
         if (!autoLoadUsable) {
             loadEnd = true;

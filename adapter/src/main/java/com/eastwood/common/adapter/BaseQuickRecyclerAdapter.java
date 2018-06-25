@@ -58,7 +58,7 @@ public abstract class BaseQuickRecyclerAdapter<T, VH extends RecyclerAdapterHelp
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        convert(position, (VH) viewHolder, data.get(position));
+        convert(position, (ViewHelper<T>) viewHolder, data.get(position));
     }
 
     protected View getItemView(int layoutResId, ViewGroup parent) {
@@ -123,10 +123,11 @@ public abstract class BaseQuickRecyclerAdapter<T, VH extends RecyclerAdapterHelp
     /**
      * Implement this method and use the helper to adapt the view to the given item.
      *
+     * @param position The item position.
      * @param helper A fully initialized helper.
      * @param item   The item that needs to be displayed.
      */
-    protected abstract void convert(int position, VH helper, T item);
+    protected abstract void convert(int position, ViewHelper helper, T item);
 
     protected abstract int getItemType(int position);
 

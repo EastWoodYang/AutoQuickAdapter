@@ -24,13 +24,7 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Abstraction class of a BaseAdapter in which you only need
- * to provide the convert() implementation.<br/>
- * Using the provided BaseAdapterHelper, your code is minimalist.
- * @param <T> The type of the items in the list.
- */
-public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends BaseAdapter {
+public abstract class BaseQuickAdapter<T, VH extends BaseAdapterHelper> extends BaseAdapter {
 
     protected static final String TAG = BaseQuickAdapter.class.getSimpleName();
 
@@ -44,22 +38,10 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
         this(null, 0, null);
     }
 
-    /**
-     * Create a QuickAdapter.
-     * @param context     The context.
-     * @param layoutResId The layout resource id of each item.
-     */
     public BaseQuickAdapter(Context context, int layoutResId) {
         this(context, layoutResId, null);
     }
 
-    /**
-     * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
-     * @param context     The context.
-     * @param layoutResId The layout resource id of each item.
-     * @param data        A new list is created out of this one to avoid mutable list
-     */
     public BaseQuickAdapter(Context context, int layoutResId, List<T> data) {
         this.data = data == null ? new ArrayList<T>() : data;
         this.context = context;
@@ -98,7 +80,7 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final H helper = getAdapterHelper(position, convertView, parent);
+        final ViewHelper<VH> helper = getAdapterHelper(position, convertView, parent);
         T item = getItem(position);
         convert(position, helper, item);
         return helper.getView();
@@ -156,23 +138,13 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 
     /**
      * Implement this method and use the helper to adapt the view to the given item.
+     *
+     * @param position The item position.
      * @param helper A fully initialized helper.
      * @param item   The item that needs to be displayed.
      */
-    protected abstract void convert(int position, H helper, T item);
+    protected abstract void convert(int position, ViewHelper helper, T item);
 
-    /**
-     * You can override this method to use a custom BaseAdapterHelper in order to fit your needs
-     * @param position    The position of the item within the adapter's data set of the item whose view we want.
-     * @param convertView The old view to reuse, if possible. Note: You should check that this view
-     *                    is non-null and of an appropriate type before using. If it is not possible to convert
-     *                    this view to display the correct data, this method can create a new view.
-     *                    Heterogeneous lists can specify their number of view types, so that this View is
-     *                    always of the right type (see {@link #getViewTypeCount()} and
-     *                    {@link #getItemViewType(int)}).
-     * @param parent      The parent that this view will eventually be attached to
-     * @return An instance of BaseAdapterHelper
-     */
-    protected abstract H getAdapterHelper(int position, View convertView, ViewGroup parent);
+    protected abstract ViewHelper<VH> getAdapterHelper(int position, View convertView, ViewGroup parent);
 
 }

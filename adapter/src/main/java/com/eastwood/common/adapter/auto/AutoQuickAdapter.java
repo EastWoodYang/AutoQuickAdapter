@@ -26,4 +26,5 @@ public abstract class AutoQuickAdapter<T> extends BaseAutoAdapter<T> {
     protected int getBodyCount() {
         return data.size();
     }
+
 }

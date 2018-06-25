@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.eastwood.common.adapter.BaseAdapterHelper;
+import com.eastwood.common.adapter.ViewHelper;
 
 public class AutoWrapAdapter<A extends BaseAdapter> extends BaseAutoAdapter {
 
@@ -56,7 +57,7 @@ public class AutoWrapAdapter<A extends BaseAdapter> extends BaseAutoAdapter {
     }
 
     @Override
-    protected void convert(int position, BaseAdapterHelper helper, Object item) {
+    protected void convert(int position, ViewHelper helper, Object item) {
 
     }
 

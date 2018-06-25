@@ -77,9 +77,9 @@ public class SampleListViewAutoWrapAdapter extends AppCompatActivity {
 
                 if (mAutoLoadCount < 2) {
                     mAutoLoadCount++;
-                    mAutoWrapAdapter.onAutoLoadComplete(true);
+                    mAutoWrapAdapter.onAutoLoadFinished(true);
                 } else {
-                    mAutoWrapAdapter.onAutoLoadComplete(false);
+                    mAutoWrapAdapter.onAutoLoadFinished(false);
                 }
             }
         }, 1500);

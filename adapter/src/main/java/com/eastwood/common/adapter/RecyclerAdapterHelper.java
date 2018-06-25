@@ -117,30 +117,6 @@ public class RecyclerAdapterHelper extends RecyclerView.ViewHolder implements Vi
         return this;
     }
 
-//    public RecyclerAdapterHelper setImageUrl(int viewId, String imageUrl, ImageLoader imageLoader) {
-//        ImageView view = retrieveView(viewId);
-//        imageLoader.displayImage(imageUrl, view);
-//
-////        if (!TextUtils.isEmpty(imageUrl) && view.getTag() == null
-////                || !view.getTag().equals(imageUrl)) {
-////            imageLoader.displayImage(imageUrl, view);
-////            view.setTag(imageUrl);
-////        }
-//        return this;
-//    }
-
-//    public RecyclerAdapterHelper setImageUrl(int viewId, String imageUrl, ImageLoader imageLoader, DisplayImageOptions options) {
-//        ImageView view = retrieveView(viewId);
-//        imageLoader.displayImage(imageUrl, view, options);
-//
-////        if (!TextUtils.isEmpty(imageUrl) && view.getTag() == null
-////                || !view.getTag().equals(imageUrl)) {
-////            imageLoader.displayImage(imageUrl, view, options);
-////            view.setTag(imageUrl);
-////        }
-//        return this;
-//    }
-
     @Override
     public RecyclerAdapterHelper setImageBitmap(int viewId, Bitmap bitmap) {
         ImageView view = retrieveView(viewId);

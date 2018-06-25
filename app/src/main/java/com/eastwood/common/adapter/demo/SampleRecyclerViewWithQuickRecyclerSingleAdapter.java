@@ -5,9 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-
 import com.eastwood.common.adapter.QuickRecyclerSingleAdapter;
-import com.eastwood.common.adapter.RecyclerAdapterHelper;
+import com.eastwood.common.adapter.ViewHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public class SampleRecyclerViewWithQuickRecyclerSingleAdapter extends AppCompatA
 
         mQuickRecyclerSingleAdapter = new QuickRecyclerSingleAdapter<SampleModel>(this, R.layout.list_item, mDataList) {
             @Override
-            protected void convert(int position, RecyclerAdapterHelper helper, SampleModel item) {
+            protected void convert(int position, ViewHelper helper, SampleModel item) {
                 helper.setText(R.id.textView1, item.getValues());
             }
         };

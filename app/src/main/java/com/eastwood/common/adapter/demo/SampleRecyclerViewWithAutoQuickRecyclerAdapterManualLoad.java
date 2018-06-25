@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.eastwood.common.adapter.RecyclerAdapterHelper;
+import com.eastwood.common.adapter.ViewHelper;
 import com.eastwood.common.adapter.auto.AutoQuickRecyclerSingleAdapter;
 import com.eastwood.common.adapter.auto.OnAutoLoadListener;
 
@@ -32,7 +32,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterManualLoad extends Ap
 
         mAutoQuickRecyclerSingleAdapter = new AutoQuickRecyclerSingleAdapter<SampleModel>(this, R.layout.list_item, mDataList) {
             @Override
-            protected void convert(int position, RecyclerAdapterHelper helper, SampleModel item) {
+            protected void convert(int position, ViewHelper helper, SampleModel item) {
                 helper.setText(R.id.textView1, item.getValues());
             }
         };
@@ -77,9 +77,9 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterManualLoad extends Ap
 
                 if (mAutoLoadCount < 2) {
                     mAutoLoadCount++;
-                    mAutoQuickRecyclerSingleAdapter.onAutoLoadComplete(true);
+                    mAutoQuickRecyclerSingleAdapter.onAutoLoadFinished(true);
                 } else {
-                    mAutoQuickRecyclerSingleAdapter.onAutoLoadComplete(false);
+                    mAutoQuickRecyclerSingleAdapter.onAutoLoadFinished(false);
                 }
             }
         }, 1500);

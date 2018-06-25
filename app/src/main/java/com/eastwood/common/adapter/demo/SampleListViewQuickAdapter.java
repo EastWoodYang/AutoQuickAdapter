@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.eastwood.common.adapter.BaseAdapterHelper;
 import com.eastwood.common.adapter.QuickAdapter;
+import com.eastwood.common.adapter.ViewHelper;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class SampleListViewQuickAdapter extends AppCompatActivity {
         mQuickAdapter = new QuickAdapter<SampleModel>(this, R.layout.list_item, mDataList) {
 
             @Override
-            protected void convert(int position, BaseAdapterHelper helper, SampleModel item) {
+            protected void convert(int position, ViewHelper helper, SampleModel item) {
                 helper.setText(R.id.textView1, item.getValues());
             }
         };

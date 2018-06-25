@@ -33,7 +33,6 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     private OnAutoLoadListener mOnAutoLoadListener;
     private View.OnClickListener mOnLastItemClickListener;
     private View.OnClickListener mEmptyClick = new View.OnClickListener() {
-
         @Override
         public void onClick(View v) {
 
@@ -174,7 +173,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         notifyDataSetChanged();
     }
 
-    public boolean getAutoLoadUsable() {
+    public boolean isAutoLoadUsable() {
         return autoLoadUsable;
     }
 
@@ -263,7 +262,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         notifyDataSetChanged();
     }
 
-    public void onAutoLoadComplete(boolean autoLoadUsable) {
+    public void onAutoLoadFinished(boolean autoLoadUsable) {
         setLoading(false);
         if (!autoLoadUsable) {
             loadEnd = true;

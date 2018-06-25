@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.eastwood.common.adapter.BaseAdapterHelper;
+import com.eastwood.common.adapter.ViewHelper;
 import com.eastwood.common.adapter.auto.AutoQuickAdapter;
 import com.eastwood.common.adapter.auto.OnAutoLoadListener;
 
@@ -33,7 +33,7 @@ public class SampleListViewAutoQuickAdapter extends AppCompatActivity {
         mAutoQuickAdapter = new AutoQuickAdapter<SampleModel>(this, R.layout.list_item, mDataList) {
 
             @Override
-            protected void convert(int position, BaseAdapterHelper helper, SampleModel item) {
+            protected void convert(int position, ViewHelper helper, SampleModel item) {
                 helper.setText(R.id.textView1, item.getValues());
             }
         };
@@ -81,9 +81,9 @@ public class SampleListViewAutoQuickAdapter extends AppCompatActivity {
 
                 if (mAutoLoadCount < 2) {
                     mAutoLoadCount++;
-                    mAutoQuickAdapter.onAutoLoadComplete(true);
+                    mAutoQuickAdapter.onAutoLoadFinished(true);
                 } else {
-                    mAutoQuickAdapter.onAutoLoadComplete(false);
+                    mAutoQuickAdapter.onAutoLoadFinished(false);
                 }
             }
         }, 1500);
