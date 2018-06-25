@@ -4,10 +4,12 @@
 #### Default style
 <img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.png'/>
 
+<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.gif'/>
+
 #### You can custom style
 <img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.png'/>
 
-<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.gif'/>  <img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.gif'/>
+<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.gif'/>
 
 ## Get it
 AutoQuickAdapter is now available on JCentral.
