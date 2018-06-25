@@ -1,6 +1,11 @@
 # AutoQuickAdapter
 
 ## Look Like
+#### Default style
+<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.png'/>
+
+#### You can custom style
+<img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.png'/>
 
 <img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/1.gif'/>  <img src='https://github.com/EastWoodYang/AutoQuickAdapter/blob/master/picture/2.gif'/>
 
@@ -14,7 +19,7 @@ AutoQuickAdapter is now available on JCentral.
 
 #### AutoQuickAdapter
 
-    AutoQuickAdapter autoQuickAdapter = new AutoQuickAdapter<T>(this, R.layout.list_item, mDataList) {
+    autoQuickAdapter = new AutoQuickAdapter<SampleModel>(this, R.layout.list_item, mDataList) {
      
         @Override
         protected void convert(int position, BaseAdapterHelper helper, SampleModel item) {
@@ -27,7 +32,7 @@ AutoQuickAdapter is now available on JCentral.
     
 #### AutoQuickRecyclerAdapter
     
-    QuickRecyclerAdapter quickRecyclerAdapter = new QuickRecyclerAdapter<SampleModel>(this, mDataList) {
+    quickRecyclerAdapter = new QuickRecyclerAdapter<SampleModel>(this, mDataList) {
         
         @Override
         protected int getItemType(int position) {
