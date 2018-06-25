@@ -1,4 +1,5 @@
 # AutoQuickAdapter
+Make load-more easy for ListView and RecycleView. and combine with QuickAdapter.
 
 ## Look Like
 #### Default style
@@ -61,7 +62,12 @@ AutoQuickAdapter is now available on JCentral.
         
     };
 
+#### AutoWrapAdapter / AutoWrapRecyclerAdapter
+compatible with the old adapter.
 
+    older = new SampleAdapter(this, mDataList);
+    autoWrapAdapter = new AutoWrapAdapter<SampleAdapter>(older);
+    listView.setAdapter(autoWrapAdapter);
 
 # Thanks
 [JoanZapata / base-adapter-helper](https://github.com/JoanZapata/base-adapter-helper)   
