@@ -84,7 +84,6 @@ AutoQuickAdapter is now available on JCentral.
         }
         
     };
-     
     ...
 
 #### AutoQuickRecyclerAdapter
@@ -128,7 +127,7 @@ compatible with the old adapter.
 * ```setManualLoad(boolean manualLoad)```
 * ```isManualLoad()```
 
-#### ViewHelper
+### ViewHelper
 * ```setText()``` Calls ```setText(int viewId, String value)``` on any TextView.
 * ```setTextColor()``` Calls ```setTextColor(int textColor)``` on any TextView.
 * ```setImageResource()``` Calls ```setImageResource(int viewId, int imageResId)``` on any ImageView.
