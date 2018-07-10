@@ -70,7 +70,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
             autoLoadView.setOnClickListener(mOnLastItemClickListener);
         } else if (loadEnd) {
             autoLoadView = getItemView(loadEndLayoutResId, parent);
-            autoLoadView.setOnClickListener(mOnLastItemClickListener);
+            autoLoadView.setOnClickListener(mEmptyClick);
         } else {
             if (!manualLoad || loading) {
                 autoLoadView = getItemView(loadingLayoutResId, parent);
@@ -167,9 +167,9 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         return mLayoutInflater.inflate(layoutResId, parent, false);
     }
 
-    public void setAutoLoadUsable(boolean display) {
-        if (display == autoLoadUsable) return;
-        autoLoadUsable = display;
+    public void setAutoLoadUsable(boolean usable) {
+        if (usable == autoLoadUsable) return;
+        autoLoadUsable = usable;
         notifyDataSetChanged();
     }
 
@@ -262,11 +262,11 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         notifyDataSetChanged();
     }
 
-    public void onAutoLoadFinished(boolean autoLoadUsable) {
+    public void onAutoLoadFinished(boolean loadEnd) {
         setLoading(false);
-        if (!autoLoadUsable) {
-            loadEnd = true;
-            loadError = false;
+        if (!loadEnd) {
+            this.loadEnd = true;
+            this.loadError = false;
             notifyDataSetChanged();
         }
     }

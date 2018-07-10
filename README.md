@@ -44,7 +44,7 @@ AutoQuickAdapter is now available on JCentral.
             // to get more data and add to dataList
             
             // after auto-load done, you need call
-            // autoQuickAdapter.onAutoLoadComplete(boolean autoLoadUsable);
+            // autoQuickAdapter.onAutoLoadFinished(boolean loadEnd);
         }
     });
 
@@ -101,7 +101,7 @@ compatible with the old adapter.
 
 ###  Common methods of Auto***Adapter
 
-* ```onAutoLoadComplete(boolean autoLoadUsable)```
+* ```onAutoLoadFinished(boolean loadEnd)```
 * ```onAutoLoadStart()```
 * ```onAutoLoadError()```
 * ```setAutoLoadUsable(boolean usable)```

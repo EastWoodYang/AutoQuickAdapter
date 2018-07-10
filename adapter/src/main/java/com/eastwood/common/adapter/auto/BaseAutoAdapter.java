@@ -225,11 +225,11 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
         notifyDataSetChanged();
     }
 
-    public void onAutoLoadFinished(boolean autoLoadUsable) {
+    public void onAutoLoadFinished(boolean loadEnd) {
         setLoading(false);
-        if (!autoLoadUsable) {
-            loadEnd = true;
-            loadError = false;
+        if (!loadEnd) {
+            this.loadEnd = true;
+            this.loadError = false;
             notifyDataSetChanged();
         }
     }
