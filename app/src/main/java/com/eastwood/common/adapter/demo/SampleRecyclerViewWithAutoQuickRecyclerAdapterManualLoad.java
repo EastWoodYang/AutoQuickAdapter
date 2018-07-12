@@ -64,7 +64,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterManualLoad extends Ap
             public void run() {
                 if (mAutoLoadCount == 0) {
                     mAutoLoadCount++;
-                    mAutoQuickRecyclerSingleAdapter.onAutoLoadingError();
+                    mAutoQuickRecyclerSingleAdapter.onAutoLoadError();
                     return;
                 }
 

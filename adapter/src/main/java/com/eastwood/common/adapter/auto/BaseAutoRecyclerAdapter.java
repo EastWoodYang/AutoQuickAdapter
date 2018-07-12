@@ -100,9 +100,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
 
     @Override
     public int getItemCount() {
-        super.getItemCount();
-        int extra = autoLoadUsable || loadEnd || manualLoad ? 1 : 0;
-        return getBodyCount() + extra;
+        return getBodyCount() + (autoLoadUsable ? 1 : 0);
     }
 
     @Override
@@ -112,7 +110,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
             onBodyBindViewHolder(viewHolder, position);
         } else {
             // Footers don't need anything special
-            if ((autoLoadUsable || loadEnd) && position + 1 == getItemCount()) {
+            if (autoLoadUsable && position + 1 == getItemCount()) {
                 if (loadError) {
                     viewHolder.itemView.setOnClickListener(mOnLastItemClickListener);
                 } else if (loadEnd) {
@@ -138,7 +136,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         if (position < getBodyCount()) {
             return getBodyItemViewType(position);
         } else {
-            if ((autoLoadUsable || loadEnd) && position + 1 == getItemCount()) {
+            if (autoLoadUsable && position + 1 == getItemCount()) {
                 if (loadError) {
                     return ERROR_VIEW_TYPE;
                 } else if (loadEnd) {
@@ -182,7 +180,9 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     }
 
     public void setManualLoad(boolean manualLoad) {
+        if (manualLoad == this.manualLoad) return;
         this.manualLoad = manualLoad;
+        notifyDataSetChanged();
     }
 
     public boolean isLoadError() {
@@ -190,7 +190,9 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     }
 
     public void setLoadError(boolean loadError) {
+        if (loadError == this.loadError) return;
         this.loadError = loadError;
+        notifyDataSetChanged();
     }
 
     public boolean isLoadEnd() {
@@ -198,7 +200,9 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     }
 
     public void setLoadEnd(boolean loadEnd) {
+        if (loadEnd == this.loadEnd) return;
         this.loadEnd = loadEnd;
+        notifyDataSetChanged();
     }
 
     public boolean isLoading() {
@@ -206,7 +210,9 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     }
 
     public void setLoading(boolean loading) {
+        if (loading == this.loading) return;
         this.loading = loading;
+        notifyDataSetChanged();
     }
 
     public void setLoadingLayoutResId(int resId) {
@@ -249,7 +255,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         this.mOnLastItemClickListener = listener;
     }
 
-    public void onAutoLoadingError() {
+    public void onAutoLoadError() {
         loadError = true;
         notifyDataSetChanged();
     }
@@ -263,12 +269,10 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
     }
 
     public void onAutoLoadFinished(boolean loadEnd) {
-        setLoading(false);
-        if (!loadEnd) {
-            this.loadEnd = true;
-            this.loadError = false;
-            notifyDataSetChanged();
-        }
+        this.loading = false;
+        this.loadError = false;
+        this.loadEnd = loadEnd;
+        notifyDataSetChanged();
     }
 
     private int resolve(Context context, int attr, int defValue) {

@@ -63,7 +63,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerSingleAdapter extends AppCom
             public void run() {
                 if (mAutoLoadCount == 0) {
                     mAutoLoadCount++;
-                    mAutoQuickRecyclerSingleAdapter.onAutoLoadingError();
+                    mAutoQuickRecyclerSingleAdapter.onAutoLoadError();
                     return;
                 }
 

@@ -81,7 +81,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapter extends AppCompatAct
             public void run() {
                 if (mAutoLoadCount == 0) {
                     mAutoLoadCount++;
-                    mAutoQuickRecyclerAdapter.onAutoLoadingError();
+                    mAutoQuickRecyclerAdapter.onAutoLoadError();
                     return;
                 }
 

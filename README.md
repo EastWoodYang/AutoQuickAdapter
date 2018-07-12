@@ -21,7 +21,7 @@ Make load-more easy for ListView and RecycleView.
 ## Get it
 AutoQuickAdapter is now available on JCentral.
 
-    implementation 'com.eastwood.common:auto-quick-adapter:1.0.2'
+    implementation 'com.eastwood.common:auto-quick-adapter:1.0.3'
 
 
 ## Usage

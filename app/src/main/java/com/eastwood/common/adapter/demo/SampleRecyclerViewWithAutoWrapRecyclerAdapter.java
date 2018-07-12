@@ -59,7 +59,7 @@ public class SampleRecyclerViewWithAutoWrapRecyclerAdapter extends AppCompatActi
             public void run() {
                 if (mAutoLoadCount == 0) {
                     mAutoLoadCount++;
-                    mAutoWrapRecyclerAdapter.onAutoLoadingError();
+                    mAutoWrapRecyclerAdapter.onAutoLoadError();
                     return;
                 }
 

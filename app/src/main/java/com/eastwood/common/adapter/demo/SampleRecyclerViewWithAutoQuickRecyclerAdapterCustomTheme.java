@@ -64,7 +64,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterCustomTheme extends A
             public void run() {
                 if (mAutoLoadCount == 0) {
                     mAutoLoadCount++;
-                    mAutoQuickRecyclerSingleAdapter.onAutoLoadingError();
+                    mAutoQuickRecyclerSingleAdapter.onAutoLoadError();
                     return;
                 }
 
