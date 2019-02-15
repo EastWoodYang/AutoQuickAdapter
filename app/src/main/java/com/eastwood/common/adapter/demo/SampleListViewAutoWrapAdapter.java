@@ -43,7 +43,7 @@ public class SampleListViewAutoWrapAdapter extends AppCompatActivity {
                 Log.d("onItemClick", "position: " + position);
             }
         });
-        mAutoWrapAdapter.setAutoLoadUsable(true);
+        mAutoWrapAdapter.setAutoLoadEnable(true);
         mAutoWrapAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {

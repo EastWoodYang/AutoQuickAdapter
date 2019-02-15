@@ -38,7 +38,7 @@ public class SampleRecyclerViewWithAutoWrapRecyclerAdapter extends AppCompatActi
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAutoWrapRecyclerAdapter);
 
-        mAutoWrapRecyclerAdapter.setAutoLoadUsable(true);
+        mAutoWrapRecyclerAdapter.setAutoLoadEnable(true);
         mAutoWrapRecyclerAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {

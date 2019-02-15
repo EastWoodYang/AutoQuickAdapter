@@ -39,7 +39,7 @@ public class SampleListViewAutoQuickAdapterManualLoad extends AppCompatActivity 
         setContentView(R.layout.sample_list_view);
         listView = findViewById(R.id.refresh_layout);
         listView.setAdapter(mAutoQuickAdapter);
-        mAutoQuickAdapter.setAutoLoadUsable(true);
+        mAutoQuickAdapter.setAutoLoadEnable(true);
         mAutoQuickAdapter.setManualLoad(true);
         mAutoQuickAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override

@@ -42,7 +42,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterCustomTheme extends A
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAutoQuickRecyclerSingleAdapter);
 
-        mAutoQuickRecyclerSingleAdapter.setAutoLoadUsable(true);
+        mAutoQuickRecyclerSingleAdapter.setAutoLoadEnable(true);
         mAutoQuickRecyclerSingleAdapter.setLoadingLayoutResId(R.layout.custom_loading_layout);
         mAutoQuickRecyclerSingleAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override

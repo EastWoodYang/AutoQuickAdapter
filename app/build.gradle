@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+
     defaultConfig {
         applicationId "com.eastwood.common.adapter.demo"
         minSdkVersion 14
@@ -23,5 +23,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.eastwood.common:auto-quick-adapter:1.0.3' //project(':adapter')
+    implementation project(':adapter')
 }

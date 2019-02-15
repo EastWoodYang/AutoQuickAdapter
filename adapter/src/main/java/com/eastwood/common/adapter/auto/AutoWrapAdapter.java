@@ -26,7 +26,7 @@ public class AutoWrapAdapter<A extends BaseAdapter> extends BaseAutoAdapter {
 
     @Override
     public Object getItem(int position) {
-        if (getItemViewType(position) == 0) {
+        if (position < mBase.getCount()) {
             return mBase.getItem(position);
         }
         return null;
@@ -34,20 +34,28 @@ public class AutoWrapAdapter<A extends BaseAdapter> extends BaseAutoAdapter {
 
     @Override
     public long getItemId(int position) {
-        if (getItemViewType(position) == 0) {
+        if (position < mBase.getCount()) {
             return mBase.getItemId(position);
         }
         return 0;
     }
 
     @Override
+    public int getViewTypeCount() {
+        return mBase.getViewTypeCount() + 1;
+    }
+
+    @Override
     public int getItemViewType(int position) {
-        return position >= mBase.getCount() ? 1 : 0;
+        if (position < mBase.getCount()) {
+            return mBase.getItemViewType(position);
+        }
+        return mBase.getViewTypeCount();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (getItemViewType(position) == 0) {
+        if (position < mBase.getCount()) {
             if (convertView != null && convertView.getTag() == null) {
                 convertView = null;
             }

@@ -42,7 +42,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerSingleAdapter extends AppCom
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAutoQuickRecyclerSingleAdapter);
 
-        mAutoQuickRecyclerSingleAdapter.setAutoLoadUsable(true);
+        mAutoQuickRecyclerSingleAdapter.setAutoLoadEnable(true);
         mAutoQuickRecyclerSingleAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {

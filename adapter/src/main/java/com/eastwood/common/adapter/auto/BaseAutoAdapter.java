@@ -15,7 +15,7 @@ import java.util.List;
 
 public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapterHelper> {
 
-    protected boolean autoLoadUsable;
+    protected boolean autoLoadEnable;
 
     protected boolean manualLoad;
 
@@ -56,7 +56,7 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
 
     @Override
     public int getCount() {
-        return getBodyCount() + (autoLoadUsable ? 1 : 0);
+        return getBodyCount() + (autoLoadEnable ? 1 : 0);
     }
 
     @Override
@@ -113,14 +113,24 @@ public abstract class BaseAutoAdapter<T> extends BaseQuickAdapter<T, BaseAdapter
         return convertView;
     }
 
-    public void setAutoLoadUsable(boolean usable) {
-        if (usable == autoLoadUsable) return;
-        autoLoadUsable = usable;
+    public void setAutoLoadEnable(boolean enable) {
+        if (enable == autoLoadEnable) return;
+        autoLoadEnable = enable;
         notifyDataSetChanged();
     }
 
+    public boolean isAutoLoadEnable() {
+        return autoLoadEnable;
+    }
+
+    @Deprecated
+    public void setAutoLoadUsable(boolean usable) {
+        setAutoLoadEnable(usable);
+    }
+
+    @Deprecated
     public boolean isAutoLoadUsable() {
-        return autoLoadUsable;
+        return isAutoLoadEnable();
     }
 
     public boolean isManualLoad() {

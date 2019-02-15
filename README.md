@@ -37,7 +37,7 @@ AutoQuickAdapter is now available on JCentral.
             ...
         }
     };
-    autoQuickAdapter.setAutoLoadUsable(true);
+    autoQuickAdapter.setAutoLoadEnable(true);
     autoQuickAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
         @Override
         public void onLoading() {
@@ -104,8 +104,8 @@ compatible with the old adapter.
 * ```onAutoLoadFinished(boolean loadEnd)```
 * ```onAutoLoadStart()```
 * ```onAutoLoadError()```
-* ```setAutoLoadUsable(boolean usable)```
-* ```isAutoLoadUsable()```
+* ```setAutoLoadEnable(boolean enable)```
+* ```isAutoLoadEnable()```
 * ```setOnAutoLoadListener(OnAutoLoadListener listener)```
 * ```setOnLastItemClickListener(View.OnClickListener listener)```
 * ```setManualLayoutResId(boolean resId)```

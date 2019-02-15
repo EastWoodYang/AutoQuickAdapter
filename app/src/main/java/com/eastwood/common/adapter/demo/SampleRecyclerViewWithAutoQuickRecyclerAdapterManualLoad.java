@@ -42,7 +42,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapterManualLoad extends Ap
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAutoQuickRecyclerSingleAdapter);
 
-        mAutoQuickRecyclerSingleAdapter.setAutoLoadUsable(true);
+        mAutoQuickRecyclerSingleAdapter.setAutoLoadEnable(true);
         mAutoQuickRecyclerSingleAdapter.setManualLoad(true);
         mAutoQuickRecyclerSingleAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override

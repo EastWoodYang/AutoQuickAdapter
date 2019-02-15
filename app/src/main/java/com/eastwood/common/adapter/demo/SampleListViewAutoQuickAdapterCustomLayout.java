@@ -39,7 +39,7 @@ public class SampleListViewAutoQuickAdapterCustomLayout extends AppCompatActivit
         setContentView(R.layout.sample_list_view);
         listView = findViewById(R.id.refresh_layout);
         listView.setAdapter(mAutoQuickAdapter);
-        mAutoQuickAdapter.setAutoLoadUsable(true);
+        mAutoQuickAdapter.setAutoLoadEnable(true);
         mAutoQuickAdapter.setLoadingLayoutResId(R.layout.custom_loading_layout);
         mAutoQuickAdapter.setLoadEndLayoutResId(R.layout.custom_end_layout);
         mAutoQuickAdapter.setLoadErrorLayoutResId(R.layout.custom_error_layout);

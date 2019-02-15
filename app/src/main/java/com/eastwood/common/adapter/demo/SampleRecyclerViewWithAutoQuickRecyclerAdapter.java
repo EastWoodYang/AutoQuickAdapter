@@ -60,7 +60,7 @@ public class SampleRecyclerViewWithAutoQuickRecyclerAdapter extends AppCompatAct
         mRecyclerView = findViewById(R.id.refresh_layout);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAutoQuickRecyclerAdapter);
-        mAutoQuickRecyclerAdapter.setAutoLoadUsable(true);
+        mAutoQuickRecyclerAdapter.setAutoLoadEnable(true);
         mAutoQuickRecyclerAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {

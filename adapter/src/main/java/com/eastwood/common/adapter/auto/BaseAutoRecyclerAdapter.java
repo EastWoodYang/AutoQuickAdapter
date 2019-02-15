@@ -17,7 +17,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
 
     private LayoutInflater mLayoutInflater;
 
-    private boolean autoLoadUsable;
+    private boolean autoLoadEnable;
 
     private boolean manualLoad;
 
@@ -100,7 +100,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
 
     @Override
     public int getItemCount() {
-        return getBodyCount() + (autoLoadUsable ? 1 : 0);
+        return getBodyCount() + (autoLoadEnable ? 1 : 0);
     }
 
     @Override
@@ -110,7 +110,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
             onBodyBindViewHolder(viewHolder, position);
         } else {
             // Footers don't need anything special
-            if (autoLoadUsable && position + 1 == getItemCount()) {
+            if (autoLoadEnable && position + 1 == getItemCount()) {
                 if (loadError) {
                     viewHolder.itemView.setOnClickListener(mOnLastItemClickListener);
                 } else if (loadEnd) {
@@ -136,7 +136,7 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         if (position < getBodyCount()) {
             return getBodyItemViewType(position);
         } else {
-            if (autoLoadUsable && position + 1 == getItemCount()) {
+            if (autoLoadEnable && position + 1 == getItemCount()) {
                 if (loadError) {
                     return ERROR_VIEW_TYPE;
                 } else if (loadEnd) {
@@ -165,14 +165,24 @@ public abstract class BaseAutoRecyclerAdapter<T, VH extends RecyclerAdapterHelpe
         return mLayoutInflater.inflate(layoutResId, parent, false);
     }
 
-    public void setAutoLoadUsable(boolean usable) {
-        if (usable == autoLoadUsable) return;
-        autoLoadUsable = usable;
+    public void setAutoLoadEnable(boolean enable) {
+        if (enable == autoLoadEnable) return;
+        autoLoadEnable = enable;
         notifyDataSetChanged();
     }
 
+    public boolean isAutoLoadEnable() {
+        return autoLoadEnable;
+    }
+
+    @Deprecated
+    public void setAutoLoadUsable(boolean usable) {
+        setAutoLoadEnable(usable);
+    }
+
+    @Deprecated
     public boolean isAutoLoadUsable() {
-        return autoLoadUsable;
+        return isAutoLoadEnable();
     }
 
     public boolean isManualLoad() {

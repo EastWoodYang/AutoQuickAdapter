@@ -47,7 +47,7 @@ public class SampleListViewAutoQuickAdapter extends AppCompatActivity {
                 Log.d("onItemClick", "position: " + position);
             }
         });
-        mAutoQuickAdapter.setAutoLoadUsable(true);
+        mAutoQuickAdapter.setAutoLoadEnable(true);
         mAutoQuickAdapter.setOnAutoLoadListener(new OnAutoLoadListener() {
             @Override
             public void onLoading() {
