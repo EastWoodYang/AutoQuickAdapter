@@ -28,7 +28,7 @@ apply plugin: 'maven'
 
 def groupId = 'com.eastwood.common'
 def artifactId = 'auto-quick-adapter'
-def version = '1.0.3'
+def version = '1.0.4'
 
 def localReleaseDest = "${buildDir}/release/${version}"
 
